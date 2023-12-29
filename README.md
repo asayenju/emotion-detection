@@ -30,5 +30,10 @@ The script will open your camera and display real-time emotion recognition resul
 * The normalized face is fed into the pre-trained Keras model for emotion prediction.
 * The predicted emotion is overlaid on the video feed along with a bounding box around the detected face.
 
+# References
+* Haar Cascade Classifier
+* Keras
+
+Feel free to modify the script and experiment with different models for improved emotion recognition accuracy. If you find any issues or have suggestions, please create an issue or submit a pull request.
 
 
