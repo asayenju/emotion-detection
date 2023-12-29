@@ -21,3 +21,7 @@ while True: #Capture every frame
         roi = cv2.resize(roi, (64,64)) #resize to 64 by 64 pixels which is normal size
         roi = roi.astype('float') / 255.0 #normalize it
         roi = np.expand_dims(roi, axis =0) #make it more flexible for the model
+
+        emotion = model.predict(roi)[0] #Predict
+        emotion_index = np.argmax(emotion) #predict the greatest probability of the emotion made and get the emotion
+        emotion_text = emotion_labels[emotion_index] #To actually generate the image
