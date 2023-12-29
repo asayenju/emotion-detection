@@ -31,3 +31,6 @@ while True: #Capture every frame
     cv2.imshow('Emotion Recognition', frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
+
+cap.release()
+cv2.destroyAllWindows()
