@@ -25,3 +25,9 @@ while True: #Capture every frame
         emotion = model.predict(roi)[0] #Predict
         emotion_index = np.argmax(emotion) #predict the greatest probability of the emotion made and get the emotion
         emotion_text = emotion_labels[emotion_index] #To actually generate the image
+
+        cv2.rectangle(frame, (x,y), (x+w, y+h), (0, 255, 0), 2)
+        cv2.putText(frame, emotion_text, (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
+    cv2.imshow('Emotion Recognition', frame)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
